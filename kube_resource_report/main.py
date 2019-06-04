@@ -108,6 +108,7 @@ def main(
     include_clusters,
     exclude_clusters,
     additional_cost_per_cluster,
+
     update_interval_minutes,
     pricing_file,
     links_file,

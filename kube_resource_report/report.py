@@ -1007,4 +1007,13 @@ def write_report(out: OutputManager, start, notifications, cluster_summaries, na
         context["pods_by_application"] = pods_by_application
         out.render_template('application.html', context, file_name)
 
+    for app_id, application in applications.items():
+            page = "applications"
+            file_name = f"namespace-{app_id}.html"
+            context["page"] = page
+            context["application"] = application
+            context["ingresses_by_application"] = ingresses_by_application
+            context["pods_by_application"] = pods_by_application
+            out.render_template('application.html', context, file_name)
+
     out.clean_up_stale_files()
